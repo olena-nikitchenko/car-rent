@@ -1,13 +1,16 @@
-Task Description:
+# Task Description:
 Create a web application for a company that provides car rental services in Ukraine. The application consists of three pages:
 
-Home Page: Contains a general description of the services provided by the company. Styling and design are open to your discretion.
+# Home Page: 
+Contains a general description of the services provided by the company. Styling and design are open to your discretion.
 
-Catalog Page: Displays a catalog of cars with different configurations that users can filter by brand, hourly rental price, and mileage.
+# Catalog Page: 
+Displays a catalog of cars with different configurations that users can filter by brand, hourly rental price, and mileage.
 
-Favorites Page: Shows advertisements that the user has added to their favorites.
+# Favorites Page: 
+Shows advertisements that the user has added to their favorites.
 
-Technical Specifications:
+# Technical Specifications:
 Project Structure and Dependencies:
 
 Start a new React project and install necessary dependencies like react, react-router-dom for routing, and any other libraries you may need.

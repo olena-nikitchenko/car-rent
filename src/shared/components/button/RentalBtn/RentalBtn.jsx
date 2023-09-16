@@ -3,11 +3,11 @@ import css from "./RentalBtn.module.scss";
 
 export default function RentalBtn() {
 	return (
-		<button
+		<a
 			className={css.rentalBtn}
 			href="tel:+380730000000"
 		>
 			Rental car
-		</button>
+		</a>
 	);
 }

@@ -73,7 +73,10 @@ const Modal = ({
 						aria-label="close button"
 						onClick={onClose}
 					>
-						<MdClose className={css.closeIcon} /> {/* Иконка */}
+						<MdClose
+							className={css.closeIcon}
+							size={24}
+						/>
 					</button>
 					<img
 						className={css.img}
@@ -115,7 +118,7 @@ const Modal = ({
 								{functionalities.map((functionality, index) => (
 									<li
 										key={index}
-										className={css.AccessoryListItem}
+										className={css.accessoryListItem}
 									>
 										{functionality}
 									</li>

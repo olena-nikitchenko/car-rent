@@ -1,10 +1,9 @@
-import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaHeart, FaHeartbeat } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { addToFavoriteList, removeToFavoriteList } from "../../../redux/slices/favoriteSlice";
-import LearnMoreBtn from "../../components/button/LearnMoreBtn/LearnMoreBtn";
-import Modal from "../modal/modal";
+import LoadMoreBtn from "../button/LearnMoreBtn/LearnMoreBtn";
+import Modal from "../Modal/Modal";
 import css from "./CarCard.module.scss";
 
 export default function CarCard({
@@ -54,11 +53,25 @@ export default function CarCard({
 		<div className={css.card}>
 			<div className={css.imageBox}>
 				<img
+					className={css.img}
 					src={img}
 					alt={make}
 				/>
-				<button onClick={isFavorite ? removeCarFavorite : addCarFavorite}>
-					{isFavorite ? <FaHeartbeat /> : <FaHeart />}
+				<button
+					className={css.btn}
+					onClick={isFavorite ? removeCarFavorite : addCarFavorite}
+				>
+					{isFavorite ? (
+						<FaHeart style={{ color: "#3470FF", width: "18px", height: "18px" }} />
+					) : (
+						<FaHeart
+							style={{
+								color: "white",
+								width: "18px",
+								height: "18px",
+							}}
+						/>
+					)}
 				</button>
 			</div>
 			<div className={css.textWrapper}>
@@ -81,7 +94,10 @@ export default function CarCard({
 					<span className={css.textSpan}>{id}</span>
 					<span className={css.textSpan}>{initialFunctionality}</span>
 				</div>
-				<LearnMoreBtn onClick={openModal} />
+				<div className={css.loadMoreWrapper}>
+					<LoadMoreBtn onClick={openModal} />
+				</div>
+
 				{isModalOpen && (
 					<Modal
 						onClose={closeModal}
@@ -108,22 +124,3 @@ export default function CarCard({
 		</div>
 	);
 }
-
-CarCard.propTypes = {
-	id: PropTypes.number.isRequired,
-	year: PropTypes.number.isRequired,
-	make: PropTypes.string.isRequired,
-	model: PropTypes.string.isRequired,
-	type: PropTypes.string.isRequired,
-	img: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	fuelConsumption: PropTypes.number.isRequired,
-	engineSize: PropTypes.string.isRequired,
-	accessories: PropTypes.arrayOf(PropTypes.string).isRequired,
-	functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
-	rentalPrice: PropTypes.number.isRequired,
-	rentalCompany: PropTypes.string.isRequired,
-	address: PropTypes.string.isRequired,
-	rentalConditions: PropTypes.string.isRequired,
-	mileage: PropTypes.number.isRequired,
-};

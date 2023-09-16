@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-// import { routes } from "../routes";
+import { useGetAdvertsQuery } from "../../redux/slices/authSlice";
 import HomePage from "../../pages/HomePage/HomePage";
 import CatalogPage from "../../pages/CatalogPage/CatalogPage";
 import FavoritesPage from "../../pages/FavoritePage/FavoritePage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 
 export default function App() {
+	const { data } = useGetAdvertsQuery();
+	if (!data) return <div>Loading...</div>;
 	return (
 		<Routes>
 			<Route
@@ -14,11 +16,11 @@ export default function App() {
 			/>
 			<Route
 				path="/catalog"
-				element={<CatalogPage />}
+				element={<CatalogPage data={data} />}
 			/>
 			<Route
 				path="/favorites"
-				element={<FavoritesPage />}
+				element={<FavoritesPage data={data} />}
 			/>
 			<Route
 				path="*"

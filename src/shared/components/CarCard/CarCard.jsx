@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { addToFavoriteList, removeToFavoriteList } from "../../../redux/slices/favoriteSlice";
 import LoadMoreBtn from "../button/LearnMoreBtn/LearnMoreBtn";
-import Modal from "../Modal/Modal";
+import Modal from "../modal/Modal";
 import defaultCarImage from "../../../images/defaultCar.png";
 import css from "./CarCard.module.scss";
 

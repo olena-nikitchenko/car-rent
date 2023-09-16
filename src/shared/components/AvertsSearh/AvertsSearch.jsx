@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import NotAdverts from "../NotAdverts/NotAdverts";
 import LoadMoreBtn from "../button/LoadMoreBtn/LoadMoreBtn";
 import CarList from "../CarList/CarList";
@@ -57,11 +58,11 @@ export default function AvertsSearch({ data }) {
 
 		if (model !== "") {
 			if (!isBrandValid(model)) {
-				toast.error("Car brand should contain only EN letters !");
+				toast.error("Please use only English letters for the car brand!");
 				return;
 			}
 			if (!modelOptions.find(option => option.label.toLowerCase() === model.toLowerCase())) {
-				toast.error(`There is no car brand "${model}" in the list with these params!`);
+				toast.error(`The car brand "${model}" is not available with these parameters.`);
 				return;
 			}
 
@@ -120,7 +121,7 @@ export default function AvertsSearch({ data }) {
 		if (model !== "" || price !== "" || startMiles !== "" || endMiles !== "") {
 			if (arr.length === 0) {
 				setShowNotAdvertsMessage(true);
-				toast.info("No cars matching your criteria found.");
+				toast.info("No cars meet your search conditions.");
 			}
 		}
 	};
@@ -205,25 +206,37 @@ export default function AvertsSearch({ data }) {
 		<div className={css.section}>
 			<div className={css.inputsBlock}>
 				<div className={css.inputBlock}>
-					<label htmlFor="modelTitle">Car brand</label>
+					<label
+						className={css.label}
+						htmlFor="modelTitle"
+					>
+						Car brand
+					</label>
 					<input
 						id="modelTitle"
+						className={`${css.input} ${css.modelInput}`}
 						placeholder="Enter the text"
 						onChange={handleChangeModel}
 						value={model}
 						onKeyDown={event => handleInputKeyPress(event, "model")}
 					/>
 					<button
+						className={`${css.inputBtn} ${css.modelInputBtn}`}
 						type="button"
 						onClick={() => toggleDropdown("model")}
 					>
-						{isDropdownOpen === "model" ? <span>&uarr;</span> : <span>&darr;</span>}
+						{isDropdownOpen === "model" ? (
+							<FiChevronUp className={css.arrowUp} />
+						) : (
+							<FiChevronDown className={css.arrowDown} />
+						)}
 					</button>
 					{isDropdownOpen === "model" && (
-						<div className={css.dropDown}>
+						<div className={css.modelDropdown}>
 							<ul className={css.optionList}>
 								{modelOptions.map((option, idx) => (
 									<li
+										className={css.optionListItem}
 										key={idx}
 										onClick={() => handleSelectModel(option.value)}
 									>
@@ -235,25 +248,37 @@ export default function AvertsSearch({ data }) {
 					)}
 				</div>
 				<div className={css.inputBlock}>
-					<label htmlFor="priceTitle">Price/ 1 hour</label>
+					<label
+						className={css.label}
+						htmlFor="priceTitle"
+					>
+						Price/ 1 hour
+					</label>
 					<input
 						id="priceTitle"
+						className={`${css.input} ${css.modelPrice}`}
 						placeholder="To $"
 						onChange={handleChangePrice}
 						value={price}
 						onKeyDown={event => handleInputKeyPress(event, "price")}
 					/>
 					<button
+						className={`${css.inputBtn} ${css.priceInputBtn}`}
 						type="button"
 						onClick={() => toggleDropdown("price")}
 					>
-						{isDropdownOpen === "price" ? <span>&uarr;</span> : <span>&darr;</span>}
+						{isDropdownOpen === "price" ? (
+							<FiChevronUp className={css.arrowUp} />
+						) : (
+							<FiChevronDown className={css.arrowDown} />
+						)}
 					</button>
 					{isDropdownOpen === "price" && (
-						<div className={css.dropdown}>
+						<div className={css.priceDropdown}>
 							<ul className={css.optionList}>
 								{priceOptions.map((option, idx) => (
 									<li
+										className={css.optionListItem}
 										key={idx}
 										onClick={() => handleSelectPrice(option.value)}
 									>
@@ -265,35 +290,44 @@ export default function AvertsSearch({ data }) {
 					)}
 				</div>
 				<div className={css.inputBlock}>
-					<label htmlFor="mileageTitle">Car mileage / km</label>
+					<label
+						className={css.label}
+						htmlFor="mileageTitle"
+					>
+						Car mileage / km
+					</label>
 					<div className={css.mileageInputWrapper}>
 						<input
 							id="mileageTitle"
-							placeholder="from"
+							className={`${css.input} ${css.inputMileageFrom}`}
+							placeholder="From"
 							onChange={handleChangeStartMiles}
 							value={startMiles}
 							onKeyDown={event => handleInputKeyPress(event, "mileage")}
 						/>
 						<input
 							type="number"
+							className={`${css.input} ${css.inputMileageTo}`}
 							value={endMiles}
 							onChange={handleChangeEndMiles}
-							placeholder="to"
+							placeholder="To"
 							onKeyDown={event => handleInputKeyPress(event, "mileage")}
 						/>
 					</div>
 				</div>
 				<button
+					className={css.searchBtn}
 					type="button"
 					onClick={search}
 				>
 					Search
 				</button>
 				<button
+					className={css.undoBtn}
 					type="button"
 					onClick={reset}
 				>
-					Reset
+					Undo
 				</button>
 			</div>
 			<CarList adverts={paginatedCars} />

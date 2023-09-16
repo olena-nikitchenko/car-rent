@@ -32,8 +32,7 @@
 	align-items: flex-start;
 }
 
-.modelInputBtn,
-.priceInputBtn {
+.inputBtn {
 	position: absolute;
 	padding: 0;
 	right: 14px;
@@ -42,8 +41,10 @@
 	border: none;
 	cursor: pointer;
 	outline: none;
+	&:focus {
+		outline: none;
+	}
 }
-
 .modelDropdown,
 .priceDropdown {
 	position: absolute;
@@ -80,8 +81,7 @@
 	}
 }
 
-.modelOptionList,
-.priceOptionList {
+.optionList {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -90,11 +90,10 @@
 	margin-right: auto;
 }
 
-.modelOptionListItem,
-.priceOptionListItem {
+.optionListItem {
 	font-size: 16px;
 	font-weight: 500;
-	line-height: 20px;
+	line-height: calc(20px / 16px);
 	color: rgba(18, 20, 23, 0.2);
 	transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	cursor: pointer;
@@ -104,21 +103,18 @@
 	}
 }
 
-label {
+.label {
 	font-size: 14px;
 	font-weight: 500;
-	line-height: 18px;
-	color: #fff;
+	line-height: calc(18px / 14px);
+	color: #8a8a89;
 	margin-bottom: 8px;
+	font-family: Manrope;
 }
-
-.modelInput,
-.priceInput,
-.mileageInputLeft,
-.mileageInputRight {
+.input {
 	display: flex;
-	width: 224px;
 	padding: 10px 10px 10px 18px;
+	min-height: 24px;
 	justify-content: center;
 	align-items: center;
 	gap: 32px;
@@ -130,7 +126,6 @@ label {
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 20px;
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 10px;
 
 	&::placeholder {
 		color: #121417;
@@ -144,6 +139,30 @@ label {
 		padding: 14px 14px 14px 18px;
 	}
 }
+.modelInput {
+	width: 224px;
+}
+.priceInput {
+	width: 125px;
+}
+.inputMileageFrom,
+.inputMileageTo {
+	width: 160px;
+	border-radius: 0;
+}
+.inputMileageFrom {
+	border-top-left-radius: 14px;
+	border-bottom-left-radius: 14px;
+	border-right: 1px solid rgba(18, 20, 23, 0.1);
+}
+.inputMileageTo {
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
+}
+.mileageInputWrapper {
+	display: flex;
+	gap: 0;
+}
 
 .arrowDown,
 .arrowUp {
@@ -153,23 +172,27 @@ label {
 	color: #121417;
 }
 
-.searchBtn {
-	padding: 10px 20px;
+.searchBtn,
+.undoBtn {
+	padding: 14px 20px;
 	color: #fff;
 	font-family: Manrope;
-	font-size: 16px;
+	font-size: 14px;
 	font-style: normal;
-	font-weight: 500;
-	line-height: 24px;
+	font-weight: 600;
+	line-height: calc(20px / 14px);
 	border-radius: 12px;
-	background: #5a7aaf;
+	background: #3470ff;
 	border: none;
 	cursor: pointer;
-	box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
 	transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	&:hover {
-		background: #445c84;
+		background: #0b44cd;
+	}
+	&:focus,
+	&:focus-visible {
+		outline: none;
 	}
 
 	@media (min-width: 768px) {

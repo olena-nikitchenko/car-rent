@@ -1,0 +1,32 @@
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navList {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navListItem {
+	margin: 0;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #3470ff;
+	border-radius: 10px;
+	&:hover {
+		background: #0b44cd;
+	}
+}
+.navLink {
+	color: #fff;
+	&:hover {
+		color: #fff;
+	}
+}

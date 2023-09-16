@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import CarCard from "../../components/CarCard/CarCard";
 import css from "./CarList.module.scss";
 
@@ -6,7 +7,6 @@ export default function CarsList({ adverts }) {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-	console.log(adverts);
 
 	return (
 		<section className={css.section}>
@@ -14,7 +14,7 @@ export default function CarsList({ adverts }) {
 				<ul className={css.carList}>
 					{adverts?.map(advert => (
 						<CarCard
-							key={advert.id}
+							key={uuidv4()}
 							id={advert.id}
 							year={advert.year}
 							make={advert.make}

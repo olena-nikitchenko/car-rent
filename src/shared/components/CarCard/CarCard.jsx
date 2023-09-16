@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 import { addToFavoriteList, removeToFavoriteList } from "../../../redux/slices/favoriteSlice";
 import LoadMoreBtn from "../button/LearnMoreBtn/LearnMoreBtn";
 import Modal from "../Modal/Modal";
+import defaultCarImage from "../../../images/defaultCar.png";
 import css from "./CarCard.module.scss";
 
 export default function CarCard({
@@ -54,7 +56,7 @@ export default function CarCard({
 			<div className={css.imageBox}>
 				<img
 					className={css.img}
-					src={img}
+					src={img || defaultCarImage}
 					alt={make}
 				/>
 				<button
@@ -62,14 +64,14 @@ export default function CarCard({
 					onClick={isFavorite ? removeCarFavorite : addCarFavorite}
 				>
 					{isFavorite ? (
-						<FaHeart style={{ color: "#3470FF", width: "18px", height: "18px" }} />
-					) : (
 						<FaHeart
-							style={{
-								color: "white",
-								width: "18px",
-								height: "18px",
-							}}
+							size={18}
+							style={{ color: "#3470FF" }}
+						/>
+					) : (
+						<FiHeart
+							size={18}
+							style={{ color: "rgba(255, 255, 255, 0.8)" }}
 						/>
 					)}
 				</button>

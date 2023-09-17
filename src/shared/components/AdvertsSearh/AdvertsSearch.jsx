@@ -5,11 +5,11 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import NotAdverts from "../NotAdverts/NotAdverts";
 import LoadMoreBtn from "../button/LoadMoreBtn/LoadMoreBtn";
 import CarList from "../CarList/CarList";
-import css from "./AvertsSearch.module.scss";
+import css from "./AdvertsSearch.module.scss";
 
 const advertsPerPage = 8;
 
-export default function AvertsSearch({ data }) {
+export default function AdvertsSearch({ data }) {
 	const [model, setModel] = useState("");
 	const [price, setPrice] = useState("");
 	const [startMiles, setStartMiles] = useState("");
@@ -338,6 +338,6 @@ export default function AvertsSearch({ data }) {
 	);
 }
 
-AvertsSearch.propTypes = {
+AdvertsSearch.propTypes = {
 	data: PropTypes.array.isRequired,
 };

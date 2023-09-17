@@ -4,8 +4,8 @@ import css from "./NotAdverts.module.scss";
 
 export default function NotAdverts() {
 	return (
-		<div className={css.section}>
-			<p className={css.text}>No cars in inventory</p>
+		<div>
+			<h1 className={css.title}>No cars in inventory</h1>
 			<img
 				className={css.img}
 				src={carsKit}

@@ -1,10 +1,10 @@
 import React from "react";
-import AvertsSearch from "../../../src/shared/components/AvertsSearh/AvertsSearch";
+import AdvertsSearch from "../../shared/components/AdvertsSearh/AdvertsSearch";
 
 export default function CatalogPage({ data }) {
 	return (
 		<>
-			<AvertsSearch data={data} />
+			<AdvertsSearch data={data} />
 		</>
 	);
 }

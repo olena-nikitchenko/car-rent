@@ -3,23 +3,20 @@
 .rentalBtn {
 	display: inline-block;
 	align-items: center;
-	font-family: Manrope;
 	min-width: 68px;
 	max-height: 40px;
 	border-radius: 12px;
 	padding: 12px 50px;
-	color: #ffffff;
-	background: #3470ff;
+	color: $color-white;
+	background: $color-blue;
 	font-weight: 600;
-	font-size: 14px;
 	line-height: calc(20px / 14px);
-
 	@include tablet {
 		max-height: 50px;
 	}
 
 	&:hover {
-		background: #0b44cd;
+		background: $color-hover;
 	}
 	&:focus {
 		outline: none;

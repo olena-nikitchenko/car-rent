@@ -27,7 +27,7 @@
 			right: 14px;
 			border: none;
 			background-color: transparent;
-			transition: background-color 250ms ease, color 250ms ease;
+			transition: background-color $transition-duration ease, color $transition-duration ease;
 			&:focus {
 				border: none;
 				outline: none;
@@ -52,11 +52,6 @@
 				color: #121417;
 				font-size: 16px;
 				line-height: 24px;
-			}
-
-			.modelBlue {
-				color: #872142;
-				font-size: 16px;
 			}
 		}
 

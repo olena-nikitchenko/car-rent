@@ -2,32 +2,26 @@
 
 .loadMoreBtn {
 	min-width: 85px;
-	color: #3470ff;
-	font-family: Manrope;
+	color: $color-blue;
 	font-size: 16px;
 	font-weight: 500;
-	line-height: 24px;
+	line-height: calc(24px / 16px);
 	text-decoration-line: underline;
 	padding: 9px 2px;
-	background: #fff;
 	border: 2px solid transparent;
 	outline: none;
+	transition: all $transition-duration $cubic;
 	margin-top: 30px;
-	transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	&:hover {
-		color: #0b44cd;
-		border: 2px solid #0b44cd;
+		color: $color-hover;
+		border: 2px solid $color-hover;
 	}
 	&:focus {
-		border: 2px solid #0b44cd;
+		border: 2px solid $color-hover;
 		outline: none;
 	}
-
-	@media (min-width: 768px) {
-		margin-top: 50px;
-	}
-	@media (min-width: 1440px) {
+	@include tablet {
 		margin-top: 50px;
 	}
 }

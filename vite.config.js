@@ -5,4 +5,11 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
 	base: "/task-test",
 	plugins: [react()],
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: '@import "./src/styles/_shared.scss";',
+			},
+		},
+	},
 });

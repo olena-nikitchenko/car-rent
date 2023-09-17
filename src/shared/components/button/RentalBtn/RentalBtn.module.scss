@@ -1,0 +1,24 @@
+@import "/src/styles/styles.scss";
+
+.rentalBtn {
+	display: inline-block;
+	align-items: center;
+	min-width: 68px;
+	max-height: 40px;
+	border-radius: 12px;
+	padding: 12px 50px;
+	color: $color-white;
+	background: $color-blue;
+	font-weight: 600;
+	line-height: calc(20px / 14px);
+	@include tablet {
+		max-height: 50px;
+	}
+
+	&:hover {
+		background: $color-hover;
+	}
+	&:focus {
+		outline: none;
+	}
+}

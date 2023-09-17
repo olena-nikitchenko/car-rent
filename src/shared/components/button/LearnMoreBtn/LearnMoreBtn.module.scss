@@ -1,0 +1,19 @@
+@import "/src/styles/styles.scss";
+
+.learnMoreBtn {
+	width: 274px;
+	padding: 12px 0;
+	color: $color-white;
+	font-weight: 600;
+	line-height: 20px;
+	border-radius: 12px;
+	background: $color-blue;
+	border: none;
+	outline: none;
+
+	transition: all $transition-duration $cubic;
+
+	&:hover {
+		background: $color-hover;
+	}
+}

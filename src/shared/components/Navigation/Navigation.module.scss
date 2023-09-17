@@ -1,0 +1,33 @@
+@import "/src/styles/styles.scss";
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navList {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.navListItem {
+	margin: 0;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(52, 112, 255, 0.5);
+	border-radius: 10px;
+	&:hover {
+		background: $color-hover;
+	}
+}
+.navLink {
+	color: $color-white;
+	&:hover {
+		color: $color-white;
+	}
+}

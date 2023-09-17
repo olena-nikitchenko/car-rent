@@ -1,0 +1,14 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Manrope", sans-serif;
+	font-size: 14px;
+	color: $color-white;
+	background-color: $color-white;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}

@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useGetAdvertsQuery } from "../../redux/slices/authSlice";
+import { useGetAdvertsQuery } from "../../redux/slices/allSlice";
 import HomePage from "../../pages/HomePage/HomePage";
 import CatalogPage from "../../pages/CatalogPage/CatalogPage";
 import FavoritesPage from "../../pages/FavoritePage/FavoritePage";

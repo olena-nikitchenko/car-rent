@@ -12,7 +12,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { favoriteSlice } from "./slices/favoriteSlice";
-import { advertsApi } from "./slices/authSlice";
+import { advertsApi } from "./slices/allSlice";
 
 const persistConfig = {
 	key: "root",

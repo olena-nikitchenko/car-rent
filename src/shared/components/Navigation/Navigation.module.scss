@@ -7,8 +7,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 2000;
-	background-color: rgba(52, 112, 255, 0.5);
 }
 
 .navList {
@@ -21,7 +19,7 @@
 
 .navListItem {
 	margin: 0;
-	padding: 15px;
+	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

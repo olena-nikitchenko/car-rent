@@ -4,10 +4,11 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding: 10px 0;
+	padding: 17px 0;
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 2px solid #00466e1a;
+	z-index: 1000;
 
 	@include tablet {
 		width: 100%;

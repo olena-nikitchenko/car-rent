@@ -11,7 +11,7 @@ export default function CarsList({ adverts }) {
 	return (
 		<section className={css.section}>
 			{Array.isArray(adverts) && adverts.length !== 0 && (
-				<ul className={css.carList}>
+				<div className={css.carList}>
 					{adverts?.map(advert => (
 						<CarCard
 							key={uuidv4()}
@@ -34,7 +34,7 @@ export default function CarsList({ adverts }) {
 							isFavorite={advert.isFavorite}
 						/>
 					))}
-				</ul>
+				</div>
 			)}
 		</section>
 	);

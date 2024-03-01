@@ -2,9 +2,9 @@
 
 .card {
 	width: 274px;
-	height: 426px;
-	display: flex;
-	flex-direction: column;
+	height: auto;
+	display: grid;
+	place-items: center;
 
 	.imageBox {
 		position: relative;
@@ -39,6 +39,7 @@
 		width: 100%;
 
 		.textMain {
+			justify-self: center;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -56,6 +57,7 @@
 		}
 
 		.textSecondary {
+			justify-self: center;
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;

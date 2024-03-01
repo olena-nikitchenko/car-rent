@@ -1,20 +1,17 @@
 @import "/src/styles/styles.scss";
 .nav {
 	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	left: 35px;
+	top: 1px;
 }
 
 .navList {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(3, 80px);
 	width: 100%;
 	justify-content: center;
 	align-items: center;
-	gap: 30px;
+	gap: 5px;
 }
 
 .navListItem {

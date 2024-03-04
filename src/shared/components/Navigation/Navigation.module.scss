@@ -1,8 +1,14 @@
 @import "/src/styles/styles.scss";
 .nav {
 	position: fixed;
-	left: 35px;
+	left: calc(5% + 10vw);
 	top: 1px;
+	@include tablet {
+		left: calc(10% + 15vw);
+	}
+	@include desktop {
+		left: calc(15% + 20vw);
+	}
 }
 
 .navList {
@@ -12,6 +18,12 @@
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
+	@include tablet {
+		gap: 30px;
+	}
+	@include desktop {
+		gap: 50px;
+	}
 }
 
 .navListItem {

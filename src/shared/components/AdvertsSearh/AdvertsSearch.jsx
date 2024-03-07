@@ -315,20 +315,22 @@ export default function AdvertsSearch({ data }) {
 						/>
 					</div>
 				</div>
-				<button
-					className={css.searchBtn}
-					type="button"
-					onClick={search}
-				>
-					Search
-				</button>
-				<button
-					className={css.undoBtn}
-					type="button"
-					onClick={reset}
-				>
-					Undo
-				</button>
+				<div className={css.boxhBtn}>
+					<button
+						className={css.searchBtn}
+						type="button"
+						onClick={search}
+					>
+						Search
+					</button>
+					<button
+						className={css.undoBtn}
+						type="button"
+						onClick={reset}
+					>
+						Undo
+					</button>
+				</div>
 			</div>
 			<CarList adverts={paginatedCars} />
 			{filteredCars.length > 0

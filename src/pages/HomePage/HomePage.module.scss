@@ -1,13 +1,16 @@
 @import "/src/styles/styles.scss";
 
 .title {
-	font-size: 60px;
+	font-size: 50px;
 	color: #3470ff;
 	position: absolute;
 	top: 10vh;
 	right: 50%;
 	transform: translateY(-10%);
 	transform: translateX(50%);
+	@include tablet {
+		font-size: 60px;
+	}
 }
 
 .img {

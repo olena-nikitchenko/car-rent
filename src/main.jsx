@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 			loading={null}
 			persistor={persistor}
 		>
-			<BrowserRouter basename="/task-test">
+			<BrowserRouter basename="/rent-car">
 				<App />
 			</BrowserRouter>
 		</PersistGate>

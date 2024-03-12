@@ -1,19 +1,31 @@
 @import "/src/styles/styles.scss";
 
-.title {
-	font-size: 50px;
-	color: #3470ff;
-	position: absolute;
-	top: 10vh;
-	right: 50%;
-	transform: translateY(-10%);
-	transform: translateX(50%);
-	@include tablet {
-		font-size: 60px;
-	}
-}
-
-.img {
-	width: 100%;
+.home {
+	width: 100vw;
 	height: 100vh;
+	background-color: #c6d4ea;
+	background-image: url("../../images/carHomePage.jpg");
+	background-repeat: no-repeat;
+	color: #fff;
+	text-align: center;
+	background-position: center center;
+	background-size: cover;
+}
+.title {
+	font-size: 80px;
+	color: #8abde1;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	@include tablet {
+		font-size: 100px;
+	}
+	@include desktop {
+		font-size: 120px;
+	}
+	@media (min-width: 1800px) {
+		font-size: 200px;
+	}
 }
